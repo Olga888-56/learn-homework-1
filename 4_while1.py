@@ -15,8 +15,8 @@ def hello_user():
 #   Замените pass на ваш код
 #   """
     while True:
-        ask = input('Как дела? ')
-        if ask == ('хорошо'):
+        how_are_you = input('Как дела? ')
+        if how_are_you == ('хорошо'):
             break
         else:
             print('Как дела? ')
