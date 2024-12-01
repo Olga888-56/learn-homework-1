@@ -30,11 +30,14 @@ def ask_user():
     """
     
     question = input('Введите вопрос: ')
-    answer = questions_and_answers.get(question)
-    if question in questions_and_answers:
-        print(answer)
-    else:
-        print("я не знаю")
+    answer = "Другой вопрос"
+    answer = questions_and_answers.get(question, answer)
+    print(answer)
+#    answer = questions_and_answers.get(question)
+#    if question in questions_and_answers:
+#        print(answer)
+#    else:
+#        print("я не знаю")
 
 ask_user()
 
