@@ -1,4 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from datetime import date
+
 
 def greet_user(update, context):
     print("Вызван /start")
@@ -12,7 +14,9 @@ def greet_user(update, context):
 def planets(update, context):
     import ephem
     print("Вызвана функция planets")
-    
+
+    import datetime
+    today = date.today() 
 #    planet = update.message.text
 #   planet = ephem.Mars('2024/11/29')
 #   update.message.reply_text("Планета {planet}")
@@ -26,14 +30,15 @@ def planets(update, context):
       planet_name = planet.split()
       print(planet_name)
       name = planet_name[1]
-      Mars = ephem.Mars("2024/11/30")
+
+      Mars = ephem.Mars(today)
 #      Earth = ephem.Earth("2024/11/30")
-      Uranus = ephem.Uranus("2024/11/30")
-      Jupiter = ephem.Jupiter("2024/11/30")
-      Neptune = ephem.Neptune("2024/11/30")
-      Venus = ephem.Venus("2024/11/30")
-      Pluto = ephem.Pluto("2024/11/30")
-      Mercury = ephem.Mercury("2024/11/30")
+      Uranus = ephem.Uranus(today)
+      Jupiter = ephem.Jupiter(today)
+      Neptune = ephem.Neptune(today)
+      Venus = ephem.Venus(today)
+      Pluto = ephem.Pluto(today)
+      Mercury = ephem.Mercury(today)
       if name == "Mars":
           const = ephem.constellation(Mars)
       elif name == "Jupiter":
