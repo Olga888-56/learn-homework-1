@@ -17,11 +17,11 @@
 def get_activity(age):
     if age >= 2 and age < 7:
            return "Детский сад"
-    elif age < 18:
+    elif age >=7 and age < 18:
            return "Школа"
-    elif age < 23:
+    elif age >=18 and age < 23:
            return "вуз"
-    elif age < 60:
+    elif age >=23 and age < 60:
            return "Работа"
     else:
            return "Старый или малый)"
